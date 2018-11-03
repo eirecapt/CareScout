@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8982122E218E2127002290B5 /* NightscoutKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8982122D218E2127002290B5 /* NightscoutKit.framework */; };
+		89821230218E213F002290B5 /* NightscoutKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8982122F218E213F002290B5 /* NightscoutKit.framework */; };
 		89E4BA88218E1ADE00DA95D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E4BA87218E1ADE00DA95D6 /* AppDelegate.swift */; };
 		89E4BA8A218E1ADE00DA95D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E4BA89218E1ADE00DA95D6 /* ViewController.swift */; };
 		89E4BA8D218E1ADE00DA95D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E4BA8B218E1ADE00DA95D6 /* Main.storyboard */; };
@@ -82,6 +84,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8982122D218E2127002290B5 /* NightscoutKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NightscoutKit.framework; path = Carthage/Build/watchOS/NightscoutKit.framework; sourceTree = "<group>"; };
+		8982122F218E213F002290B5 /* NightscoutKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NightscoutKit.framework; path = Carthage/Build/iOS/NightscoutKit.framework; sourceTree = "<group>"; };
 		89E4BA84218E1ADE00DA95D6 /* CareScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E4BA87218E1ADE00DA95D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89E4BA89218E1ADE00DA95D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89821230218E213F002290B5 /* NightscoutKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,12 +140,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8982122E218E2127002290B5 /* NightscoutKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8982122C218E2126002290B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8982122F218E213F002290B5 /* NightscoutKit.framework */,
+				8982122D218E2127002290B5 /* NightscoutKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		89E4BA7B218E1ADE00DA95D6 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +165,7 @@
 				89E4BAB0218E1AE200DA95D6 /* CareScout WatchKit App */,
 				89E4BABF218E1AE300DA95D6 /* CareScout WatchKit Extension */,
 				89E4BA85218E1ADE00DA95D6 /* Products */,
+				8982122C218E2126002290B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,6 +247,7 @@
 				89E4BA81218E1ADE00DA95D6 /* Frameworks */,
 				89E4BA82218E1ADE00DA95D6 /* Resources */,
 				89E4BAD5218E1AE300DA95D6 /* Embed Watch Content */,
+				89821232218E2674002290B5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -302,6 +319,7 @@
 				89E4BAB7218E1AE300DA95D6 /* Sources */,
 				89E4BAB8218E1AE300DA95D6 /* Frameworks */,
 				89E4BAB9218E1AE300DA95D6 /* Resources */,
+				89821231218E2641002290B5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -406,6 +424,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		89821231218E2641002290B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/watchOS/NightscoutKit.framework",
+				"$(SRCROOT)/Carthage/Build/watchOS/Oxygen.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		89821232218E2674002290B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/NightscoutKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Oxygen.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		89E4BA80218E1ADE00DA95D6 /* Sources */ = {
@@ -619,6 +678,10 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Q5Q8W9ATZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = "CareScout WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -641,6 +704,10 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Q5Q8W9ATZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = "CareScout WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -701,6 +768,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Q5Q8W9ATZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CareScout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -719,6 +790,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Q5Q8W9ATZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CareScout/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
